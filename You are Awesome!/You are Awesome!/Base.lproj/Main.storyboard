@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,21 +15,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are Awesome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-ht-tZM">
-                                <rect key="frame" x="50" y="139" width="314" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0c-Fo-sqj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNv-RQ-zNk">
+                                        <rect key="frame" x="108" y="748" width="199" height="30"/>
+                                        <state key="normal" title="View Message"/>
+                                        <connections>
+                                            <action selector="messageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBZ-Nh-HMf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytl-Kf-mcg">
+                                        <rect key="frame" x="80" y="46" width="254" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-bp-k2i">
+                                        <rect key="frame" x="40" y="54" width="334" height="678"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ytl-Kf-mcg" secondAttribute="trailing" constant="80" id="5Kk-ug-JD6"/>
+                                    <constraint firstItem="QNv-RQ-zNk" firstAttribute="leading" secondItem="p0c-Fo-sqj" secondAttribute="leading" constant="108" id="6kL-PJ-U6R"/>
+                                    <constraint firstAttribute="bottom" secondItem="QNv-RQ-zNk" secondAttribute="bottom" constant="40" id="CWl-c4-Mv2"/>
+                                    <constraint firstItem="QNv-RQ-zNk" firstAttribute="top" secondItem="cPw-bp-k2i" secondAttribute="bottom" constant="16" id="JPC-Bq-x9i"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPw-bp-k2i" secondAttribute="trailing" constant="40" id="W0l-YO-JhF"/>
+                                    <constraint firstItem="Ytl-Kf-mcg" firstAttribute="leading" secondItem="p0c-Fo-sqj" secondAttribute="leading" constant="80" id="ZDw-bQ-Zzx"/>
+                                    <constraint firstAttribute="trailing" secondItem="QNv-RQ-zNk" secondAttribute="trailing" constant="107" id="fSg-Ox-3ps"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPw-bp-k2i" secondAttribute="trailing" constant="40" id="iqA-Oc-O5W"/>
+                                    <constraint firstAttribute="bottom" secondItem="QNv-RQ-zNk" secondAttribute="bottom" constant="40" id="j9r-8Z-uQi"/>
+                                    <constraint firstItem="cPw-bp-k2i" firstAttribute="top" secondItem="Ytl-Kf-mcg" secondAttribute="bottom" constant="8" id="pPe-4k-m6m"/>
+                                    <constraint firstItem="QNv-RQ-zNk" firstAttribute="top" secondItem="cPw-bp-k2i" secondAttribute="bottom" constant="16" id="sBk-Ty-UsE"/>
+                                    <constraint firstItem="cPw-bp-k2i" firstAttribute="leading" secondItem="p0c-Fo-sqj" secondAttribute="leading" constant="40" id="sxh-9u-kdZ"/>
+                                    <constraint firstItem="Ytl-Kf-mcg" firstAttribute="top" secondItem="p0c-Fo-sqj" secondAttribute="top" constant="46" id="zMl-dF-aJe"/>
+                                    <constraint firstItem="cPw-bp-k2i" firstAttribute="leading" secondItem="p0c-Fo-sqj" secondAttribute="leading" constant="40" id="zhI-XK-197"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p0c-Fo-sqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ApF-nq-1vv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0c-Fo-sqj" secondAttribute="bottom" id="Wyf-hO-h39"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0c-Fo-sqj" secondAttribute="trailing" id="ntD-s0-G0r"/>
+                            <constraint firstItem="p0c-Fo-sqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yYA-YL-GVm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="cPw-bp-k2i" id="g3E-GN-Xmj"/>
+                        <outlet property="messageLabel" destination="Ytl-Kf-mcg" id="XLr-Ql-36P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="115"/>
+            <point key="canvasLocation" x="136.875" y="114.08450704225352"/>
         </scene>
     </scenes>
 </document>
