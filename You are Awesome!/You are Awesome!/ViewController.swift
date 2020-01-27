@@ -16,26 +16,25 @@ class ViewController: UIViewController {
     let messages = ["You are Great!", "Good Job!", "I like your shoes!", "Nice face!"]
     var messageCount = 0
     var imageCount = 0
+    var totalImages = 9
+    var soundCount = 0
     var audioPlayer = AVAudioPlayer()
+    var totalSoundNum = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()// Do any additional setup after loading the view.
     }
-    @IBAction func messageButtonPressed(_ sender: UIButton) {
-        var newMessageCount: Int
-        repeat{
-            newMessageCount = Int.random(in: 0...messages.count - 1)
-        } while messageCount == newMessageCount
-        messageLabel.text = messages[messageCount]
-        
-        var newImageCount: Int
+    func nonRepeating(number: Int, limit: Int) -> Int {
+        var newNumber: Int
         repeat {
-            newImageCount = Int.random(in:0...9)
-        } while imageCount == newImageCount
-        imageCount = newImageCount
-        imageView.image = UIImage(named: "image\(imageCount))")
-        
-         if let sound = NSDataAsset(name: "sound0") {
+            newNumber = Int.random(in:0...limit)
+            
+        } while number == newNumber
+        return newNumber
+    }
+    
+    func playSound(name: String){
+        if let sound = NSDataAsset(name: name) {
         do{
             try audioPlayer = AVAudioPlayer(data: sound.data)
             audioPlayer.play()
@@ -46,6 +45,18 @@ class ViewController: UIViewController {
         } else {
             print("ERROR: Could not read data from file sound0")
         }
+    }
+    
+    @IBAction func messageButtonPressed(_ sender: UIButton) {
+        messageCount = nonRepeating(number: messageCount, limit: messages.count - 1)
+        messageLabel.text = messages[messageCount]
+        
+        imageCount = nonRepeating(number: imageCount, limit: totalImages - 1)
+        imageView.image = UIImage(named: "image\(imageCount))")
+        
+        soundCount = nonRepeating(number: soundCount, limit: totalSoundNum - 1)
+        playSound(name: "sound\(soundCount)")
+
     }
     
 }
