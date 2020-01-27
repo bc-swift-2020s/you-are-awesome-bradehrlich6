@@ -13,15 +13,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     
     let messages = ["You are Great!", "Good Job!", "I like your shoes!", "Nice face!"]
-    var messageCount = 0
-    var imageCount = 0
+    var messageCount = -1
+    var imageCount = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()// Do any additional setup after loading the view.
     }
     @IBAction func messageButtonPressed(_ sender: UIButton) {
-        messageLabel.text = messages[Int.random(in: 0...messages.count - 1)]
-        imageView.image = UIImage(named: "image\(Int.random(in:0...9))")
+        var newMessageCount: Int
+        repeat{
+            newMessageCount = Int.random(in: 0...messages.count - 1)
+        } while messageCount == newMessageCount
+        messageLabel.text = messages[messageCount]
+        
+        var newImageCount: Int
+        repeat {
+            newImageCount = Int.random(in:0...9)
+        } while imageCount == newImageCount
+        imageCount = newImageCount
+        
+        imageView.image = UIImage(named: "image\(imageCount))")
     }
     
 }
